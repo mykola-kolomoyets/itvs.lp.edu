@@ -1,0 +1,23 @@
+.wrap {
+  @apply bg-blue-500 pb-[4.5rem] pt-[6.25rem];
+}
+
+.inner {
+  @apply flex flex-col items-center;
+}
+
+.logo {
+  @apply mb-20;
+}
+
+.list {
+  @apply mb-[22px] flex w-full justify-between;
+}
+
+.nav-item {
+  @apply text-light;
+}
+
+.nav-item + .nav-item {
+  @apply ml-8;
+}

@@ -1,0 +1,11 @@
+.wrap {
+  --container-padding: 1.5rem;
+
+  @apply w-full ml-auto mr-auto px-[var(--container-padding)] max-w-[calc(1216px+(var(--container-padding)*2))];
+}
+
+@media screen and (max-width: 786px) {
+  .wrap {
+    --container-padding: 1rem;
+  }
+}

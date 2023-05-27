@@ -1,3 +1,59 @@
+@import url("./reset.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  #__next {
+    @apply h-full;
+  }
+
+  .lock-scroll-y {
+    @apply fixed bottom-0 left-0 right-0 top-0 overflow-y-hidden;
+  }
+
+  body .visually-hidden {
+    @apply absolute m-[-1px] h-[1px] w-[1px] overflow-hidden border-0 p-0;
+
+    clip: rect(0 0 0 0);
+  }
+
+  body .focus-primary:focus-visible {
+    @apply outline-none ring-yellow-300 first-letter:ring-2;
+  }
+
+  body .focus-primary:focus {
+    @apply outline-none ring-2 ring-yellow-300;
+  }
+
+  body .focus-within-primary:focus-within {
+    @apply outline-none ring-2 ring-yellow-300;
+  }
+
+  body .focus-primary:focus:not(body .focus-primary:focus-visible) {
+    @apply ring-0;
+  }
+
+  body .focus-primary-child {
+    @apply ring-2 ring-yellow-300;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  *::-webkit-scrollbar {
+    @apply lg:h-8 lg:w-8;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    @apply lg:bg-grey-500;
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply lg:bg-grey-100;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply lg:rounded-sm lg:border-4 lg:border-grey-100 lg:bg-grey-300;
+  }
+}

@@ -1,0 +1,11 @@
+.wrap {
+  @apply bg-blue-500;
+}
+
+.logo-wrap {
+  @apply flex-shrink-0;
+}
+
+.inner {
+  @apply flex h-[60px] items-center justify-between;
+}

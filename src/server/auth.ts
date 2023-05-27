@@ -40,6 +40,7 @@ export const authOptions: NextAuthOptions = {
       user: {
         ...session.user,
         id: user.id,
+        role: session.user.role ?? "USER",
       },
     }),
   },

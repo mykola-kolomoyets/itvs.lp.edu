@@ -1,0 +1,50 @@
+@keyframes scale-y {
+    0% {
+        transform: scaleY(0.2);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+.loader {
+    --line-width: calc(var(--size) / 5.5);
+
+    @apply relative block;
+
+    width: var(--size);
+    height: var(--size);
+}
+
+.loader span,
+.loader::after,
+.loader::before {
+    @apply absolute top-0 h-full bg-current origin-center scale-y-[0.2];
+
+    width: var(--line-width);
+}
+
+.loader span {
+    @apply left-1/2;
+
+    margin-left: calc((var(--line-width) / 2) * -1);
+    animation: scale-y 0.3s 0.15s linear infinite alternate;
+}
+
+.loader::after,
+.loader::before {
+    content: "";
+}
+
+.loader::after {
+    @apply right-0;
+
+    animation: scale-y 0.3s 0.25s linear infinite alternate;
+}
+
+.loader::before {
+    @apply left-0;
+
+    animation: scale-y 0.3s linear infinite alternate;
+}

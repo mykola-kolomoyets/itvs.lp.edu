@@ -1,0 +1,66 @@
+.button-link {
+  @apply relative inline-flex transition-colors;
+}
+
+.loading {
+  @apply pointer-events-none;
+}
+
+.button-link .loader {
+  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;
+}
+
+.inner {
+  @apply inline-flex items-center justify-center;
+}
+
+/* Sizes */
+.button-link.md {
+  @apply rounded-sm px-[1.375rem] py-14 text-base font-bold leading-[1.375rem];
+}
+
+.button-link.md .icon-left {
+  @apply mr-4;
+}
+
+.button-link.md .icon-right {
+  @apply ml-4;
+}
+
+.button-link.md.with-icon-child {
+  @apply p-4;
+}
+
+.button-link.sm {
+  @apply rounded-sm px-[1.375rem] py-10 text-sm font-bold leading-[1.1875rem];
+}
+
+.button-link.sm .icon-left {
+  @apply mr-2;
+}
+
+.button-link.sm .icon-right {
+  @apply ml-2;
+}
+
+.button-link.sm.with-icon-child {
+  @apply p-3;
+}
+
+/* Variants */
+.button-link.primary {
+  @apply bg-yellow-300 text-light hover:shadow-light-cta active:bg-yellow-500 disabled:bg-grey-100;
+}
+
+.button-link.ghost {
+  @apply text-light hover:bg-yellow-300;
+}
+
+/* Icon */
+.icon {
+  @apply shrink-0;
+}
+
+.icon-right {
+  @apply order-1;
+}

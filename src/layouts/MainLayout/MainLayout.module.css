@@ -1,0 +1,7 @@
+.wrap {
+  @apply flex min-h-full flex-col justify-between bg-grey-50;
+}
+
+.inner {
+  @apply flex-grow pb-32;
+}

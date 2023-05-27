@@ -1,0 +1,30 @@
+.wrap {
+  @apply inline-flex items-center rounded-sm text-light;
+}
+
+.wrap {
+  @apply p-16;
+}
+
+.text {
+  @apply transition-colors;
+}
+
+.wrap:hover .text,
+.wrap:focus-within .text,
+.wrap:hover .icon,
+.wrap:focus-within .icon {
+  @apply text-yellow-300;
+}
+
+.text.base {
+  @apply font-medium text-light;
+}
+
+.text.lg {
+  @apply text-lg font-black;
+}
+
+.icon {
+  @apply ml-4 !h-[14px] !w-[14px] text-light;
+}
