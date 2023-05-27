@@ -1,6 +1,6 @@
 import { env } from "@/env.mjs";
 
-export const APP_VERSION = "alpha.0.3.0";
+export const APP_VERSION = "alpha.0.3.1";
 export const IS_DEV = env.NEXT_PUBLIC_NODE_ENV === "development";
 export const ERROR_CODE = {
   UNAUTHORIZED: "UNAUTHORIZED",
