@@ -7,7 +7,7 @@
 }
 
 .avatar:hover {
-  @apply focus-primary-child;
+  @apply ring-2 ring-yellow-300;
 }
 
 .avatar .image {
