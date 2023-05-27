@@ -21,3 +21,27 @@
 .nav-item + .nav-item {
   @apply ml-8;
 }
+
+.contact-row {
+  @apply text-center text-grey-300;
+}
+
+.contact-link {
+  @apply rounded-[4px] transition-colors hover:text-yellow-300;
+}
+
+.contact-link:focus-visible {
+  @apply text-yellow-300;
+}
+
+.contact-link:focus {
+  @apply text-yellow-300;
+}
+
+.contact-link:focus:not(.contact-link:focus-visible) {
+  @apply text-yellow-300;
+}
+
+.version {
+  @apply mt-5 text-light;
+}

@@ -1,24 +1,38 @@
 import { memo } from "react";
+import Image from "next/image";
 import { signIn, useSession } from "next-auth/react";
-import { PATHS } from "@/constants";
+import {
+  AVATAR_MINI_SIZE,
+  DEFAULT_USER_NAME,
+  EMPTY_AVATAR_URL,
+  PATHS,
+} from "@/constants";
 import Button from "@/ui/Button";
-import Icon from "@/ui/Icon";
 import Link from "next/link";
 import ButtonLink from "@/ui/ButtonLink";
+import s from "./AuthShowcase.module.css";
 
 const AuthShowcase: React.FC = () => {
   const { data: sessionData } = useSession();
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
+    <div className={s.wrap}>
       {sessionData ? (
         <ButtonLink
+          className={s.avatar}
           as={Link}
           href={PATHS.PROFILE}
           variant="ghost"
           size="sm"
-          iconChild={<Icon id="icon-account_24" />}
-        />
+        >
+          <Image
+            className={s.image}
+            src={sessionData.user.image ?? EMPTY_AVATAR_URL}
+            width={AVATAR_MINI_SIZE}
+            height={AVATAR_MINI_SIZE}
+            alt={sessionData.user.name ?? DEFAULT_USER_NAME}
+          />
+        </ButtonLink>
       ) : (
         <Button variant="primary" size="sm" onClick={() => void signIn()}>
           Увійти

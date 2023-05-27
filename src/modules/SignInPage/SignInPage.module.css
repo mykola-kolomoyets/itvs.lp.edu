@@ -1,0 +1,7 @@
+.inner {
+  @apply mx-auto  max-w-[492px] flex-grow p-7;
+}
+
+.google-btn {
+  @apply w-full justify-center;
+}

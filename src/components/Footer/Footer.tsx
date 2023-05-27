@@ -1,51 +1,51 @@
 import { memo } from "react";
-import Image from "next/image";
 import clsx from "clsx";
 import type { FooterProps } from "./types";
 import { APP_VERSION } from "@/constants";
+import { DEPARTMENT_EMAIL, DEPARTMENT_PHONE } from "./constants";
+import { clearStringFrom } from "@/utils/clearStringFrom";
+import Navigation from "@/components/Header/components/Navigation";
 import Container from "@/ui/Container";
 import Typography from "@/ui/Typography";
-import Navigation from "@/components/Header/components/Navigation";
+import Logo from "@/ui/Logo";
 import s from "./Footer.module.css";
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
     <footer className={clsx(s.wrap, className)}>
       <Container className={s.inner}>
-        <Image
-          className={s.logo}
-          src="/images/logo.svg"
-          width={93}
-          height={34}
-          alt="ІТВС"
-        />
+        <Logo />
         <Navigation
           className={s.list}
           itemClassName={s["nav-item"]}
           navLinkSize="lg"
         />
         <div>
-          <Typography className="text-center text-grey-300" variant="sm">
+          <Typography className={s["contact-row"]} variant="sm">
             вул. С.Бандери, 28а, Львів-13, 79013.
           </Typography>
-          <Typography className="text-center text-grey-300" variant="sm">
+          <Typography className={s["contact-row"]} variant="sm">
             Tел.{" "}
-            <a className="focus-primary rounded-[4px]" href="tel:0322582779">
-              (032) 258-27-79
+            <a
+              className={clsx(s["contact-link"], "focus-primary")}
+              href={`tel:${clearStringFrom(DEPARTMENT_PHONE, [" ", "(", ")"])}`}
+            >
+              {DEPARTMENT_PHONE}
             </a>
           </Typography>
-          <Typography className="text-center text-grey-300" variant="sm">
+          <Typography className={s["contact-row"]} variant="sm">
             e-mail:{" "}
             <a
-              className="focus-primary rounded-[4px]"
-              href="mailto:itvs.dept@lpnu.ua"
+              className={clsx(s["contact-link"], "focus-primary")}
+              href={`mailto:${DEPARTMENT_EMAIL}`}
             >
-              itvs.dept@lpnu.ua
+              {DEPARTMENT_EMAIL}
             </a>
           </Typography>
         </div>
 
-        <Typography className="text-center mt-32 text-grey-100" variant="sm">
+        {/* TODO: REMOVE */}
+        <Typography className={clsx(s["contact-row"], s.version)} variant="sm">
           version: {APP_VERSION}
         </Typography>
       </Container>

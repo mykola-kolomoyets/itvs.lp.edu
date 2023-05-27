@@ -26,5 +26,5 @@
 }
 
 .icon {
-  @apply ml-4 !h-[14px] !w-[14px] text-light;
+  @apply ml-4 text-light;
 }

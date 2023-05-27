@@ -1,1 +1,15 @@
-.wrap {}
+.wrap {
+  @apply flex flex-col items-center justify-center gap-4;
+}
+
+.avatar {
+  @apply !rounded-full !p-0;
+}
+
+.avatar:hover {
+  @apply focus-primary-child;
+}
+
+.avatar .image {
+  @apply rounded-full;
+}

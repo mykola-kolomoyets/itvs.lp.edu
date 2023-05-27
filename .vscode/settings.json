@@ -3,6 +3,7 @@
     "clsx",
     "NEXTAUTH",
     "nextjs",
+    "signin",
     "superjson",
     "tailwindcss",
     "TRPC",

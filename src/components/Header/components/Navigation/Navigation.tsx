@@ -17,7 +17,7 @@ const Navigation: React.FC<NavigationProps> = ({
   withDivider,
 }) => {
   return (
-    <nav className="w-full max-w-[723px]">
+    <nav className={s["nav-wrap"]}>
       <ul className={clsx(s.wrap, className)}>
         {INTERNAL_NAV_LINKS.map((link) => {
           return (
@@ -41,11 +41,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 className={itemClassName}
                 href={link.href}
                 size={navLinkSize}
-                iconId={
-                  link.type === LINK_TYPES.EXTERNAL
-                    ? "icon-external-link_14"
-                    : undefined
-                }
+                isExternal={link.type === LINK_TYPES.EXTERNAL}
               >
                 {link.label}
               </NavLink>

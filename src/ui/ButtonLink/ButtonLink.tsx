@@ -1,8 +1,6 @@
 import { memo, useCallback } from "react";
 import clsx from "clsx";
-import type { IconSizeType } from "@/ui/Icon";
 import type { ButtonLinkProps } from "./types";
-import Icon from "@/ui/Icon";
 import s from "./ButtonLink.module.css";
 
 const ButtonLink = <T extends React.ElementType = "a">({
@@ -14,13 +12,12 @@ const ButtonLink = <T extends React.ElementType = "a">({
   disabled,
   iconSide,
   icon,
-  iconClassName,
   className,
   ...rest
 }: ButtonLinkProps<T> &
   Omit<React.ComponentPropsWithoutRef<T>, keyof ButtonLinkProps<T>>) => {
   const Component = as || "a";
-  let iconJSX: React.ReactNode = null;
+  const iconJSX: React.ReactNode = iconChild && iconSide ? iconChild : icon;
   const tabIndexProp = disabled ? { tabIndex: -1 } : {};
 
   const disabledLinkHandler = useCallback(
@@ -29,22 +26,6 @@ const ButtonLink = <T extends React.ElementType = "a">({
     },
     []
   );
-
-  if (!iconChild && icon && iconSide) {
-    const iconSize = "md";
-
-    iconJSX = (
-      <Icon
-        id={icon}
-        size={iconSize as IconSizeType}
-        className={clsx(
-          s.icon,
-          iconSide && s[`icon-${iconSide}`],
-          iconClassName
-        )}
-      />
-    );
-  }
 
   return (
     <Component
@@ -55,6 +36,7 @@ const ButtonLink = <T extends React.ElementType = "a">({
         disabled && s.disabled,
         iconChild && s["with-icon-child"],
         "focus-primary",
+        icon && iconSide && s[`with-icon-${iconSide}`],
         className
       )}
       onClick={disabled ? disabledLinkHandler : undefined}

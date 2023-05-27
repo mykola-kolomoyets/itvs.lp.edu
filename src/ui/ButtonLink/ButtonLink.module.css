@@ -61,6 +61,6 @@
   @apply shrink-0;
 }
 
-.icon-right {
-  @apply order-1;
+.with-icon-right {
+  @apply flex-row-reverse;
 }

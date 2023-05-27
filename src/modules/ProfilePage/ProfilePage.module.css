@@ -1,0 +1,47 @@
+.page-title {
+  @apply my-32 font-black;
+}
+
+.profile-wrap {
+  @apply flex items-center justify-between rounded-[13px] bg-light p-16;
+}
+
+.profile-wrap .left {
+  @apply inline-flex items-center;
+}
+
+.profile-wrap .left .avatar {
+  @apply rounded-sm;
+}
+
+.profile-wrap .left .info {
+  @apply ml-24 inline-flex h-full flex-col items-start justify-start;
+}
+
+.profile-wrap .left .info .name {
+  @apply mb-6 font-black;
+}
+
+.profile-wrap .left .info .role {
+  @apply mb-6 font-medium text-grey-500;
+}
+
+.created-news-wrap {
+  @apply mt-32 rounded-[13px] bg-light p-24 pb-[55px];
+}
+
+.created-news-wrap .title {
+  @apply mb-24 font-black;
+}
+
+.created-news-wrap .empty {
+  @apply flex;
+}
+
+.created-news-wrap .empty .text {
+  @apply ml-24;
+}
+
+.logout-btn .icon {
+  @apply ml-6;
+}

@@ -1,10 +1,9 @@
 import { memo, forwardRef } from "react";
 import clsx from "clsx";
-import type { IconSizeType } from "@/ui/Icon";
 import type { ButtonProps } from "./types";
 import Loader from "@/ui/Loader";
-import Icon from "@/ui/Icon";
 import s from "./Button.module.css";
+import { ICON_L_SIZE, ICON_M_SIZE } from "@/constants";
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -15,31 +14,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       size = "md",
       disabled,
       loading,
-      iconSide,
       icon,
-      iconClassName,
+      iconSide,
       className,
       ...rest
     },
     ref
   ) => {
-    let iconJSX: React.ReactNode = null;
-
-    if (!iconChild && icon && iconSide) {
-      const iconSize = "md";
-
-      iconJSX = (
-        <Icon
-          id={icon}
-          size={iconSize as IconSizeType}
-          className={clsx(
-            s.icon,
-            iconSide && s[`icon-${iconSide}`],
-            iconClassName
-          )}
-        />
-      );
-    }
+    const iconJSX: React.ReactNode = iconChild && iconSide ? iconChild : icon;
 
     return (
       <button
@@ -48,6 +30,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           s[variant],
           s[size],
           iconChild && s["with-icon-child"],
+          icon && iconSide && s[`with-icon-${iconSide}`],
           loading && s.loading,
           "focus-primary",
           className
@@ -57,7 +40,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
       >
         {loading && (
-          <Loader size={size === "md" ? 20 : 16} className={s.loader} />
+          <Loader
+            size={size === "md" ? ICON_L_SIZE : ICON_M_SIZE}
+            className={s.loader}
+          />
         )}
         <span className={clsx(s.inner, loading && "opacity-0")}>
           {iconJSX}

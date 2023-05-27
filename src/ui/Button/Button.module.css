@@ -52,6 +52,18 @@
   @apply bg-yellow-300 text-light hover:shadow-light-cta active:bg-yellow-500 disabled:bg-grey-100;
 }
 
+.button.primary:focus-visible {
+  @apply outline-none ring-blue-400 first-letter:ring-[3px];
+}
+
+.button.primary:focus {
+  @apply outline-none ring-[3px] ring-blue-400;
+}
+
+.button.primary:focus:not(.button.primary:focus-visible) {
+  @apply ring-0;
+}
+
 .button.ghost {
   @apply text-light hover:bg-yellow-300;
 }
@@ -61,6 +73,6 @@
   @apply shrink-0;
 }
 
-.icon-right {
-  @apply order-1;
+.with-icon-right .inner {
+  @apply flex-row-reverse;
 }

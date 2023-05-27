@@ -1,8 +1,9 @@
 import { memo } from "react";
+import { RiShareBoxLine } from "react-icons/ri";
 import clsx from "clsx";
 import type { NavLinkProps } from "./types";
+import { ICON_M_SIZE, ICON_S_SIZE } from "@/constants";
 import Typography from "@/ui/Typography";
-import Icon from "@/ui/Icon";
 import s from "./NavLink.module.css";
 
 const NavLink = <T extends React.ElementType = "a">({
@@ -10,7 +11,7 @@ const NavLink = <T extends React.ElementType = "a">({
   children,
   as,
   size = "base",
-  iconId,
+  isExternal,
   ...rest
 }: NavLinkProps<T> &
   Omit<React.ComponentPropsWithoutRef<T>, keyof NavLinkProps<T>>) => {
@@ -28,7 +29,12 @@ const NavLink = <T extends React.ElementType = "a">({
       >
         {children}
       </Typography>
-      {iconId ? <Icon className={s.icon} id={iconId} /> : null}
+      {isExternal ? (
+        <RiShareBoxLine
+          className={s.icon}
+          size={size === "base" ? ICON_S_SIZE : ICON_M_SIZE}
+        />
+      ) : null}
     </Component>
   );
 };
