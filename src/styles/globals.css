@@ -13,6 +13,10 @@
     @apply fixed bottom-0 left-0 right-0 top-0 overflow-y-hidden;
   }
 
+  body {
+    @apply relative;
+  }
+
   body .visually-hidden {
     @apply absolute m-[-1px] h-[1px] w-[1px] overflow-hidden border-0 p-0;
 
