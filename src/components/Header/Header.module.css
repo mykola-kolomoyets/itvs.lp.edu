@@ -1,5 +1,5 @@
 .wrap {
-  @apply bg-blue-500;
+  @apply bg-blue-500 px-8;
 }
 
 .logo-wrap {
@@ -8,4 +8,38 @@
 
 .inner {
   @apply flex h-[60px] items-center justify-between;
+}
+
+.mobile-wrap {
+  @apply absolute inset-0 top-[62px] z-50 flex translate-x-[-100%] flex-col justify-between  overscroll-contain bg-blue-500 transition-transform;
+}
+
+.mobile-wrap.opened {
+  @apply translate-x-0;
+}
+
+.mobile-nav {
+  @apply mt-3 flex-grow flex-col justify-start overflow-y-auto px-8 py-8;
+}
+
+.mobile-nav-item {
+  @apply w-full;
+}
+
+.mobile-nav-item:hover {
+  @apply bg-light bg-opacity-5;
+}
+
+.mobile-wrap .mobile-nav {
+  @apply justify-start;
+}
+
+.mobile-auth-wrap {
+  @apply flex justify-between bg-dark px-24 py-[18px];
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    @apply border-y border-grey-500;
+  }
 }

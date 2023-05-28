@@ -75,10 +75,14 @@ const ProfilePage: React.FC = () => {
           </Button>
         </section>
         <section className={s["created-news-wrap"]}>
-          <Typography className={s.title} variant="xxl">
-            Створенні статті
-          </Typography>
-
+          <div className={s.top}>
+            <Typography className={s.title} variant="xxl">
+              Створенні статті
+            </Typography>
+            <Button size="sm" disabled>
+              Створити статтю
+            </Button>
+          </div>
           <div className={s.empty}>
             <Image
               src="/images/article.webp"

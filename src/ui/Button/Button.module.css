@@ -49,7 +49,11 @@
 
 /* Variants */
 .button.primary {
-  @apply bg-yellow-300 text-light hover:shadow-light-cta active:bg-yellow-500 disabled:bg-grey-100;
+  @apply bg-yellow-300 text-light active:bg-yellow-500 disabled:bg-grey-100;
+}
+
+.button.primary:not(:disabled):hover {
+  @apply shadow-light-cta;
 }
 
 .button.primary:focus-visible {

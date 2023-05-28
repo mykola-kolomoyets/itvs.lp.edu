@@ -1,6 +1,7 @@
 import { memo } from "react";
 import clsx from "clsx";
 import type { FooterProps } from "./types";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { APP_VERSION } from "@/constants";
 import { DEPARTMENT_EMAIL, DEPARTMENT_PHONE } from "./constants";
 import { clearStringFrom } from "@/utils/clearStringFrom";
@@ -11,12 +12,14 @@ import Logo from "@/ui/Logo";
 import s from "./Footer.module.css";
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
+  const isMobile = useMediaQuery("(max-width: 767px)");
+
   return (
     <footer className={clsx(s.wrap, className)}>
       <Container className={s.inner}>
         <Logo />
         <Navigation
-          className={s.list}
+          className={clsx(s.list, isMobile && s.mobile)}
           itemClassName={s["nav-item"]}
           navLinkSize="lg"
         />

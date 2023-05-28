@@ -1,7 +1,35 @@
 .inner {
-  @apply mx-auto  max-w-[492px] flex-grow p-7;
+  @apply mx-auto mt-9 flex h-full max-w-[30.75rem] flex-col items-center  p-7;
 }
 
 .google-btn {
   @apply w-full justify-center;
+}
+
+.agreement-wrap {
+  @apply mt-9 inline-flex w-full flex-col items-center;
+}
+
+.agreement-wrap .agreement-btn {
+  @apply mt-1 text-dark;
+}
+
+.agreement-list {
+  @apply list-decimal pl-16 text-sm;
+}
+
+.agreement-title {
+  @apply mb-1 font-bold text-dark;
+}
+
+.agreement-sublist {
+  @apply list-decimal pl-16 text-sm;
+}
+
+.agreement-sublist li {
+  @apply mb-4;
+}
+
+.agreement-item {
+  @apply mb-16;
 }

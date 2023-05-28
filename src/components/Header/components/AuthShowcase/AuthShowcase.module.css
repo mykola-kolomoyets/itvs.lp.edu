@@ -2,6 +2,14 @@
   @apply flex flex-col items-center justify-center gap-4;
 }
 
+.inner {
+  @apply flex items-center justify-center gap-4;
+}
+
+.name {
+  @apply ml-12 truncate font-bold text-light;
+}
+
 .avatar {
   @apply !rounded-full !p-0;
 }
