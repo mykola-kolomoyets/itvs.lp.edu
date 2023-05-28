@@ -52,6 +52,7 @@ const Header: React.FC = () => {
                 navLinkSize={isMobile ? "lg" : "base"}
                 itemClassName={s["mobile-nav-item"]}
                 withDivider={!isMobile}
+                onItemClick={toggleIsMobileMenuOpened}
               />
               <div className={s["mobile-auth-wrap"]}>
                 <AuthShowcase />

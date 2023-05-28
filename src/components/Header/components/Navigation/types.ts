@@ -5,4 +5,5 @@ export type NavigationProps = WithClassName<{
   navLinkSize?: NavLinkProps<undefined>["size"];
   withDivider?: boolean;
   itemClassName?: string;
+  onItemClick?: () => void;
 }>;

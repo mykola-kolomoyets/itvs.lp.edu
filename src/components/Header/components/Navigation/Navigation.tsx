@@ -15,6 +15,7 @@ const Navigation: React.FC<NavigationProps> = ({
   itemClassName,
   navLinkSize = "base",
   withDivider,
+  onItemClick,
 }) => {
   return (
     <nav className={s["nav-wrap"]}>
@@ -27,6 +28,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 href={link.href}
                 as={Link}
                 size={navLinkSize}
+                onClick={onItemClick}
               >
                 {link.label}
               </NavLink>
@@ -42,6 +44,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 href={link.href}
                 size={navLinkSize}
                 isExternal={link.type === LINK_TYPES.EXTERNAL}
+                onClick={onItemClick}
               >
                 {link.label}
               </NavLink>
