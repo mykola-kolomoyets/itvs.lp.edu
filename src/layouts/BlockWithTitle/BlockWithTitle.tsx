@@ -29,7 +29,11 @@ const BlockWithTitle: React.FC<BlockWithTitleProps> = ({
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           <Link href={ctaHref!} legacyBehavior>
             <a className={clsx(s.link, "link", "focus-primary")}>
-              <Typography className={clsx(s.cta, ctaClasses)} variant="sm">
+              <Typography
+                className={clsx(s.cta, ctaClasses)}
+                variant="sm"
+                component="span"
+              >
                 {ctaLabel}
               </Typography>
             </a>
@@ -39,7 +43,11 @@ const BlockWithTitle: React.FC<BlockWithTitleProps> = ({
       case Boolean(onCTAClick): {
         return (
           <span className="focus-primary" onClick={onCTAClick}>
-            <Typography className={clsx(s.cta, ctaClasses)} variant="sm">
+            <Typography
+              className={clsx(s.cta, ctaClasses)}
+              variant="sm"
+              component="span"
+            >
               {ctaLabel}
             </Typography>
           </span>

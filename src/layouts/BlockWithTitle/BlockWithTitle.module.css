@@ -7,11 +7,11 @@
 }
 
 .block-title {
-  @apply font-black;
+  @apply flex-shrink font-black;
 }
 
 .cta {
-  @apply font-bold;
+  @apply inline-block flex-shrink-0 truncate !whitespace-nowrap font-bold;
 }
 
 .link {
