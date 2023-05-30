@@ -1,0 +1,39 @@
+.wrap {
+  --image-height: 14.75rem;
+  --content-height: 10.9375rem;
+
+  @apply overflow-hidden rounded-lg bg-light shadow-sm transition-shadow;
+}
+
+.wrap:hover {
+  @apply shadow-md;
+}
+
+.image-wrap,
+.image {
+  @apply h-[var(--image-height)] w-full;
+}
+
+.image {
+  @apply object-cover object-center;
+}
+
+.content {
+  @apply flex h-[var(--content-height)] flex-col justify-between bg-light p-24 pb-36;
+}
+
+.date-wrap {
+  @apply mt-10 flex items-center;
+}
+
+.calendar {
+  @apply mr-10;
+}
+
+.date {
+  @apply font-bold uppercase text-grey-300;
+}
+
+.title {
+  @apply font-black;
+}

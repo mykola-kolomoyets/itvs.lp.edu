@@ -1,0 +1,19 @@
+.wrap {
+  @apply my-[90px];
+}
+
+.title-wrap {
+  @apply mb-24 flex items-center justify-between;
+}
+
+.block-title {
+  @apply font-black;
+}
+
+.cta {
+  @apply font-bold;
+}
+
+.link {
+  @apply rounded-xs p-2;
+}

@@ -1,1 +1,35 @@
-.wrap {}
+.urgent-news {
+  @apply my-[5.625rem];
+}
+
+.urgent-grid {
+  @apply grid grid-cols-s gap-24;
+}
+
+.latest-news .first-row {
+  @apply mb-24 grid grid-cols-2 gap-24;
+}
+
+.latest-news .others,
+.partners-wrap,
+.lpnu-wrap {
+  @apply grid grid-cols-m gap-24;
+}
+
+.lpnu-container {
+  @apply bg-blue-500;
+}
+
+.lpnu-news {
+  @apply pb-[6.25rem] pt-[4.375rem];
+}
+
+.light-text {
+  @apply text-light;
+}
+
+@media screen and (max-width: 767px) {
+  .latest-news .first-row {
+    @apply grid-cols-1;
+  }
+}

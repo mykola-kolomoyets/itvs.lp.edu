@@ -24,7 +24,7 @@
   }
 
   body .focus-primary:focus-visible {
-    @apply outline-none ring-yellow-300 first-letter:ring-2;
+    @apply outline-none ring-yellow-300;
   }
 
   body .focus-primary:focus {
@@ -41,6 +41,18 @@
 
   body .focus-primary-child {
     @apply ring-2 ring-yellow-300;
+  }
+
+  body .link {
+    @apply relative;
+  }
+
+  body .link::after {
+    @apply absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 bg-yellow-300 transition-transform content-[''];
+  }
+
+  body .link:hover::after {
+    @apply scale-x-100;
   }
 
   ::-moz-selection {

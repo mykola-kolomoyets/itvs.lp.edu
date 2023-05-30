@@ -77,6 +77,10 @@ export default {
         bold: "700",
         black: "800",
       },
+      gridTemplateColumns: {
+        s: "repeat(auto-fill, minmax(16rem, 1fr))",
+        m: "repeat(auto-fill, minmax(20rem, 1fr))",
+      },
     },
   },
   plugins: [],

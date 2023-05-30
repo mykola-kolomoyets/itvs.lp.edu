@@ -1,0 +1,27 @@
+.wrap {
+  @apply block cursor-pointer rounded-lg bg-light p-24 shadow-sm transition-shadow;
+}
+
+.wrap:hover {
+  @apply shadow-md;
+}
+
+.wrap * {
+  @apply pointer-events-none;
+}
+
+.date-wrap {
+  @apply mb-10 flex items-center;
+}
+
+.calendar {
+  @apply mr-10;
+}
+
+.date {
+  @apply font-bold uppercase text-grey-300;
+}
+
+.title {
+  @apply font-black;
+}

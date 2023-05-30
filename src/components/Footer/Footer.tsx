@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <Typography className={s["contact-row"]} variant="sm">
             Tел.{" "}
             <a
-              className={clsx(s["contact-link"], "focus-primary")}
+              className={clsx(s["contact-link"], "link", "focus-primary")}
               href={`tel:${clearStringFrom(DEPARTMENT_PHONE, [" ", "(", ")"])}`}
             >
               {DEPARTMENT_PHONE}
@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <Typography className={s["contact-row"]} variant="sm">
             e-mail:{" "}
             <a
-              className={clsx(s["contact-link"], "focus-primary")}
+              className={clsx(s["contact-link"], "link", "focus-primary")}
               href={`mailto:${DEPARTMENT_EMAIL}`}
             >
               {DEPARTMENT_EMAIL}
