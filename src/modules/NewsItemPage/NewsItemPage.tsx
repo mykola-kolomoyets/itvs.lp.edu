@@ -44,7 +44,8 @@ const NewsItemPage: React.FC<NewsItemPageProps> = ({ article }) => {
           property="og:description"
           content="Кафедра Інформаційних технологій Видавничої Справи"
         />
-        <meta name="twitter: card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={getMetaImage()} />
         <meta name="twitter:site" content="itvs-dev.vercel.app" />
         <meta name="twitter:title" content={getMetaTitle()} />
         <meta
