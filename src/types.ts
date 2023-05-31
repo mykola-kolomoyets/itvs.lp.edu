@@ -25,3 +25,9 @@ export type SessionContext = {
 export type ObjValues<T> = T[keyof T];
 
 export type UserRole = ObjValues<typeof USER_ROLES>;
+
+export type ArticleItem = {
+  id: string;
+  title: string;
+  createdAt: Date | string;
+};
