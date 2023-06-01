@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps<ArticleItem> = ({ params }) => {
     props: {
       id,
       title: "Історія створення кафедри. Основні партнери",
-      createdAt: "2023-05-15T00:00:00.000Z",
+      createdAt: new Date().toISOString(),
     },
   };
 };
