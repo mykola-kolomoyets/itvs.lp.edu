@@ -1,0 +1,63 @@
+@keyframes slide-in {
+  from {
+    transform: translateY(calc(100% + var(--notification-offset-bottom)));
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes swipe-out {
+  from {
+    transform: translateY(var(--radix-toast-swipe-end-y));
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(calc(100% + var(--notification-offset-bottom)));
+    opacity: 0;
+  }
+}
+
+.wrap {
+  --notification-offset-bottom: 1rem;
+}
+
+.root {
+  @apply inline-block rounded-md bg-dark px-16 py-6;
+}
+
+.root.error {
+  @apply bg-red-700;
+}
+
+.title {
+  @apply text-center font-medium text-light;
+}
+
+.viewport {
+  @apply fixed bottom-[var(--notification-offset-bottom)] left-1/2 z-20 -translate-x-1/2 rounded-md empty:hidden;
+}
+
+.root[data-state="open"] {
+  animation: slide-in 150ms linear;
+}
+
+.root[data-state="closed"] {
+  animation: swipe-out 150ms linear;
+}
+
+.root[data-swipe="move"] {
+  @apply translate-y-[var(--radix-toast-swipe-move-y)];
+}
+
+.root[data-swipe="cancel"] {
+  @apply translate-y-0 transition-transform;
+}
+
+.root[data-swipe="end"] {
+  animation: swipe-out 100ms linear;
+}

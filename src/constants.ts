@@ -2,7 +2,7 @@ import { env } from "@/env.mjs";
 
 export const LOCK_SCROLL_Y_CLASS_NAME = "lock-scroll-y";
 
-export const APP_VERSION = "alpha.0.7.6";
+export const APP_VERSION = "alpha.0.8.6";
 export const IS_DEV = env.NEXT_PUBLIC_NODE_ENV === "development";
 export const ERROR_CODE = {
   UNAUTHORIZED: "UNAUTHORIZED",
