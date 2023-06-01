@@ -1,9 +1,9 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import type { ArticleItem } from "@/types";
-import NewsItemPage from "@/modules/NewsItemPage";
+import Article from "@/modules/Article";
 
 const NewsItem: NextPage<ArticleItem> = (articleProps) => {
-  return <NewsItemPage article={articleProps} />;
+  return <Article article={articleProps} />;
 };
 
 export const getStaticProps: GetStaticProps<ArticleItem> = ({ params }) => {

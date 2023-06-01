@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import Image from "next/image";
 import { signIn, useSession } from "next-auth/react";
 import {
@@ -17,6 +17,10 @@ import s from "./AuthShowcase.module.css";
 const AuthShowcase: React.FC = () => {
   const { data: sessionData } = useSession();
   const isMobile = useMediaQuery("(max-width: 767px)");
+
+  const googleSignInHandler = useCallback(() => {
+    void signIn("google", { callbackUrl: PATHS.PROFILE });
+  }, []);
 
   return (
     <div className={s.wrap}>
@@ -44,8 +48,8 @@ const AuthShowcase: React.FC = () => {
           ) : null}
         </div>
       ) : (
-        <Button variant="primary" size="sm" onClick={() => void signIn()}>
-          Увійти
+        <Button variant="primary" size="sm" onClick={googleSignInHandler}>
+          Кабінет
         </Button>
       )}
     </div>

@@ -17,9 +17,9 @@ import MainLayout from "@/layouts/MainLayout";
 import Button from "@/ui/Button";
 import Container from "@/ui/Container";
 import Typography from "@/ui/Typography";
-import s from "./ProfilePage.module.css";
+import s from "./Profile.module.css";
 
-const ProfilePage: React.FC = () => {
+const Profile: React.FC = () => {
   const { data: sessionData, status: authStatus } = useSession();
   const router = useRouter();
 
@@ -100,4 +100,4 @@ const ProfilePage: React.FC = () => {
   );
 };
 
-export default memo(ProfilePage);
+export default memo(Profile);

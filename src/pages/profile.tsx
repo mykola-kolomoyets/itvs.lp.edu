@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import ProfilePage from "@/modules/ProfilePage";
+import Profile from "@/modules/Profile";
 
-const Profile: NextPage = () => {
-  return <ProfilePage />;
+const ProfilePage: NextPage = () => {
+  return <Profile />;
 };
 
-export default Profile;
+export default ProfilePage;

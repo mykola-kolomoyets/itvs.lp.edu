@@ -10,9 +10,9 @@ import BlockWithTitle from "@/layouts/BlockWithTitle";
 import Container from "@/ui/Container";
 import ArticleWithoutImage from "@/ui/ArticleWithoutImage";
 import ArticleWithImage from "@/ui/ArticleWithImage";
-import s from "./HomePage.module.css";
+import s from "./Home.module.css";
 
-const HomePage: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <MainLayout>
       <Head>
@@ -93,4 +93,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default memo(HomePage);
+export default memo(Home);

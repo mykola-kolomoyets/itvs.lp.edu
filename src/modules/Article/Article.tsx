@@ -8,23 +8,21 @@ import {
   TelegramShareButton,
   TelegramIcon,
 } from "react-share";
-import type { NewsItemPageProps } from "./types";
+import type { ArticleProps } from "./types";
 import { ICON_M_SIZE } from "@/constants";
-import { MOCK_ARTICLE_IMAGE } from "../HomePage/constants";
+import { MOCK_ARTICLE_IMAGE } from "@/modules/Home/constants";
+import { APP_HOSTNAME } from "./constants";
 import MainLayout from "@/layouts/MainLayout";
-import s from "./NewsItemPage.module.css";
+import s from "./Article.module.css";
 
-// TODO: ENV
-const hostname = "https://itvs-dev.vercel.app";
-
-const NewsItemPage: React.FC<NewsItemPageProps> = ({ article }) => {
+const Article: React.FC<ArticleProps> = ({ article }) => {
   // TODO: UTILS
   const getMetaTitle = () => {
     return `ІТВС | ${article.title}`;
   };
 
   const getMetaPageUrl = () => {
-    return `${hostname}/news/${article.id}`;
+    return `${APP_HOSTNAME}/news/${article.id}`;
   };
 
   const getMetaImage = () => {
@@ -45,13 +43,13 @@ const NewsItemPage: React.FC<NewsItemPageProps> = ({ article }) => {
           content="Кафедра Інформаційних технологій Видавничої Справи"
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={getMetaImage()} />
-        <meta name="twitter:site" content="itvs-dev.vercel.app" />
+        <meta name="twitter:site" content={APP_HOSTNAME} />
         <meta name="twitter:title" content={getMetaTitle()} />
         <meta
           name="twitter:description"
           content="Кафедра Інформаційних технологій Видавничої Справи"
         />
+        <meta name="twitter:image" content={getMetaImage()} />
         <meta name="twitter:url" content={getMetaPageUrl()} />
       </Head>
       <MainLayout>
@@ -85,4 +83,4 @@ const NewsItemPage: React.FC<NewsItemPageProps> = ({ article }) => {
   );
 };
 
-export default memo(NewsItemPage);
+export default memo(Article);

@@ -1,5 +1,5 @@
 import type { ArticleItem } from "@/types";
 
-export type NewsItemPageProps = {
+export type ArticleProps = {
   article: ArticleItem;
 };
