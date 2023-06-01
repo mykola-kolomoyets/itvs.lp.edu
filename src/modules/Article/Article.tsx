@@ -130,7 +130,9 @@ const Article: React.FC<ArticleProps> = ({ article }) => {
               >
                 {article.title}
               </Typography>
-              <FormattedDate date={article.createdAt} />
+              {isRendered ? (
+                <FormattedDate date={new Date(article.createdAt)} />
+              ) : null}
               {isRendered && isTablet ? shareJSX : null}
             </div>
             <section className={s.content}>

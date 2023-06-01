@@ -12,7 +12,7 @@ const FormattedDate: React.FC<FormattedDateProps> = ({ className, date }) => {
       variant="xs"
       component="span"
     >
-      {formatDate(date)}
+      {formatDate(new Date(date))}
     </Typography>
   );
 };
