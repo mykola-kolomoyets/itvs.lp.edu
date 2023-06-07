@@ -81,6 +81,41 @@ export default {
         s: "repeat(auto-fill, minmax(16rem, 1fr))",
         m: "repeat(auto-fill, minmax(20rem, 1fr))",
       },
+      keyframes: {
+        slideUpEnter: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          "100%": {
+            opacity: "100",
+            transform: "translateY(0px)",
+          },
+        },
+        slideUpLeave: {
+          "0%": {
+            opacity: "100",
+            transform: "translateY(0)",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+        },
+        skeleton: {
+          "0%": {
+            backgroundColor: "hsl(200, 20%, 70%)",
+          },
+          "100%": {
+            backgroundColor: "hsl(200, 20%, 95%)",
+          },
+        },
+      },
+      animation: {
+        slideUpEnter: "slideUpEnter .3s ease-in-out",
+        slideUpLeave: "slideUpLeave .3s ease-in-out",
+        skeleton: "skeleton 1.5s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

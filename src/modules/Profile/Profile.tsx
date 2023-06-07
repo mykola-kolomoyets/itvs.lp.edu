@@ -13,7 +13,6 @@ import {
   USER_ROLES,
 } from "@/constants";
 import { ROLE_LABELS } from "./constants";
-import MainLayout from "@/layouts/MainLayout";
 import Button from "@/ui/Button";
 import Container from "@/ui/Container";
 import Typography from "@/ui/Typography";
@@ -34,7 +33,7 @@ const Profile: React.FC = () => {
   }, [authStatus, router, sessionData]);
 
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>ІТВС | Особистий кабінет</title>
         <meta name="description" content="ІТВС" />
@@ -96,7 +95,7 @@ const Profile: React.FC = () => {
           </div>
         </section>
       </Container>
-    </MainLayout>
+    </>
   );
 };
 

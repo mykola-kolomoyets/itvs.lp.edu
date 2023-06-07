@@ -1,8 +1,6 @@
 import type { ArticleWithImageItem } from "@/ui/ArticleWithImage";
 import type { ArticleWithoutImageItem } from "@/ui/ArticleWithoutImage";
-
-export const MOCK_ARTICLE_IMAGE =
-  "https://images.pexels.com/photos/7233352/pexels-photo-7233352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+import { MOCK_ARTICLE_IMAGE } from "@/constants";
 
 export const MOCK_URGENT_ARTICLES: ArticleWithoutImageItem[] = [
   {

@@ -2,7 +2,7 @@ import { env } from "@/env.mjs";
 
 export const LOCK_SCROLL_Y_CLASS_NAME = "lock-scroll-y";
 
-export const APP_VERSION = "alpha.0.8.7";
+export const APP_VERSION = "alpha.0.9.7";
 export const IS_DEV = env.NEXT_PUBLIC_NODE_ENV === "development";
 export const ERROR_CODE = {
   UNAUTHORIZED: "UNAUTHORIZED",
@@ -30,6 +30,8 @@ export const ICON_S_SIZE = 12;
 export const ICON_M_SIZE = 16;
 export const ICON_L_SIZE = 20;
 
+export const MOCK_ARTICLE_IMAGE =
+  "https://images.pexels.com/photos/7233352/pexels-photo-7233352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 export const VNS_URL = "https://vns.lpnu.ua/";
 export const STUDENTS_SCHEDULE_URL =
   "https://student.lpnu.ua/students_schedule";

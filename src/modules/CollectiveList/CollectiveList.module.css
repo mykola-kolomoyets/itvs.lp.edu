@@ -1,0 +1,11 @@
+.top {
+  @apply my-32;
+}
+
+.title {
+  @apply font-black;
+}
+
+.content {
+  @apply mb-[11.75rem] grid grid-cols-1 gap-32 md:grid-cols-2;
+}

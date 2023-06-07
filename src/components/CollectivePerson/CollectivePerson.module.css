@@ -1,0 +1,24 @@
+.wrap {
+  @apply flex items-center rounded-lg bg-light p-14;
+}
+
+.image-wrap {
+  @apply h-[7.125rem] w-[7.6875rem] flex-shrink-0 overflow-hidden rounded-lg;
+}
+
+.image {
+  @apply object-cover object-center;
+}
+
+.info-wrap {
+  @apply ml-24 flex flex-col items-start justify-center;
+}
+
+.name,
+.degree {
+  @apply font-black;
+}
+
+.degree {
+  @apply text-grey-300;
+}

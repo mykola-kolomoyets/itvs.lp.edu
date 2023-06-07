@@ -1,0 +1,14 @@
+.wrap {
+}
+
+.top {
+  @apply my-32;
+}
+
+.title {
+  @apply font-black;
+}
+
+.content {
+  @apply grid grid-cols-1 gap-32 sm:grid-cols-2 lg:grid-cols-3;
+}

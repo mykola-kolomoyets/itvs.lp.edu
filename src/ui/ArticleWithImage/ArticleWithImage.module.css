@@ -9,13 +9,30 @@
   @apply shadow-md;
 }
 
+.wrap:hover .image,
+.wrap:focus-visible .image {
+  @apply scale-110;
+}
+
+.wrap:focus .image {
+  @apply scale-110;
+}
+
+.wrap:focus:not(.wrap:focus-visible) .image {
+  @apply scale-110;
+}
+
 .image-wrap,
 .image {
   @apply h-[var(--image-height)] w-full;
 }
 
+.image-wrap {
+  @apply overflow-hidden;
+}
+
 .image {
-  @apply object-cover object-center;
+  @apply object-cover object-center transition-transform duration-300;
 }
 
 .content {

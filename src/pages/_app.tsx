@@ -3,8 +3,10 @@ import dynamic from "next/dynamic";
 import { SessionProvider } from "next-auth/react";
 import type { AppType } from "next/app";
 import type { Session } from "next-auth";
-import Notification from "@/components/Notification";
 import { api } from "@/utils/api";
+import PageWithTransition from "@/layouts/PageWithTransition";
+import Notification from "@/components/Notification";
+import "nprogress/nprogress.css";
 import "@/styles/globals.css";
 
 const Portal = dynamic(() => {
@@ -13,10 +15,7 @@ const Portal = dynamic(() => {
   });
 });
 
-const MyApp: AppType<{ session: Session | null }> = ({
-  Component,
-  pageProps: { session, ...pageProps },
-}) => {
+const MyApp: AppType<{ session: Session | null }> = (props) => {
   const [isRendered, setIsRendered] = useState(false);
 
   useEffect(() => {
@@ -24,8 +23,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
   }, []);
 
   return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
+    <SessionProvider session={props.pageProps.session}>
+      <PageWithTransition {...props} />
       {isRendered ? (
         <Portal asChild>
           <Notification />

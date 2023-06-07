@@ -31,3 +31,10 @@ export type ArticleItem = {
   title: string;
   createdAt: Date | string;
 };
+
+export type CollectiveItem = {
+  id: string;
+  fullName: string;
+  imageUrl: string;
+  degree: string;
+};

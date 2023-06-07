@@ -14,7 +14,7 @@ import s from "./Home.module.css";
 
 const Home: React.FC = () => {
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>ІТВС | Головна</title>
         <meta name="description" content="ІТВС" />
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
           </div>
         </BlockWithTitle>
       </Container>
-    </MainLayout>
+    </>
   );
 };
 
