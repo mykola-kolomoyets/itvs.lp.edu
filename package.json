@@ -1,6 +1,6 @@
 {
   "name": "itvs.lp.edu",
-  "version": "0.9.8",
+  "version": "alpha.0.9.9",
   "private": true,
   "scripts": {
     "build": "next build",
