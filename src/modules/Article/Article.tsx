@@ -104,14 +104,14 @@ const Article: React.FC<ArticleProps> = ({ article }) => {
         <meta property="og:title" content={getMetaTitle()} />
         <meta
           property="og:description"
-          content="Кафедра Інформаційних технологій Видавничої Справи"
+          content="Кафедра Інформаційних Технологій Видавничої Справи"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={APP_HOSTNAME} />
         <meta name="twitter:title" content={getMetaTitle()} />
         <meta
           name="twitter:description"
-          content="Кафедра Інформаційних технологій Видавничої Справи"
+          content="Кафедра Інформаційних Технологій Видавничої Справи"
         />
         <meta name="twitter:image" content={getMetaImage()} />
         <meta name="twitter:url" content={getMetaPageUrl()} />
