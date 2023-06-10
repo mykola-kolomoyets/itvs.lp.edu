@@ -2,6 +2,7 @@ import { memo, useEffect } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { RiCloseFill, RiLogoutBoxRLine, RiMenuLine } from "react-icons/ri";
 import clsx from "clsx";
+import type { WithClassName } from "@/types";
 import { ICON_L_SIZE, ICON_M_SIZE } from "@/constants";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import useToggle from "@/hooks/useToggle";
@@ -13,7 +14,7 @@ import Navigation from "./components/Navigation";
 import AuthShowcase from "./components/AuthShowcase";
 import s from "./Header.module.css";
 
-const Header: React.FC = () => {
+const Header: React.FC<WithClassName<unknown>> = ({ className }) => {
   const { status } = useSession();
   const [isMobileMenuOpened, toggleIsMobileMenuOpened] = useToggle();
   const isMobile = useMediaQuery("(max-width: 767px)");
@@ -26,7 +27,7 @@ const Header: React.FC = () => {
   }, [isMobile, isMobileMenuOpened, lockScrollY, unlockScrollY]);
 
   return (
-    <header className={s.wrap}>
+    <header className={clsx(s.wrap, className)}>
       <Container className={s.inner}>
         <Logo />
         {isMobile ? (

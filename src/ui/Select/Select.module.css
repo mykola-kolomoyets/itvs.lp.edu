@@ -1,0 +1,125 @@
+/* stylelint-disable selector-class-pattern */
+
+.select :global(.select__control) {
+  @apply h-[2.25rem] rounded-md border-[2px] border-solid border-slate-100 bg-slate-900 bg-opacity-5 shadow-none transition-none hover:border-yellow-300;
+}
+
+.select :global(.select__control:focus-within) {
+  @apply ring-2 ring-yellow-400;
+}
+
+.select :global(.select__control .select__control--is-focused) {
+  @apply border-[2px] border-yellow-300 shadow-sm;
+}
+
+.select :global(.select__control .select__control--is-disabled) {
+  @apply border-transparent;
+}
+
+.select :global(.select__value-container) {
+  @apply top-[-2px] p-0 text-sm;
+}
+
+.select :global(.select__placeholder) {
+  @apply m-0 pb-2 pl-[20px] pr-3 pt-[3px] text-sm leading-5 text-slate-600;
+}
+
+.select :global(.select__control--is-disabled .select__placeholder) {
+  @apply text-slate-300;
+}
+
+.select :global(.select__input-container) {
+  @apply m-0 h-[2rem] py-12 pl-4 pr-16 text-sm leading-5 text-dark;
+}
+
+.select :global(.select__value-container .select__input-container) {
+  @apply !pt-0;
+}
+
+.select :global(.select__value-container--has-value .select__input-container) {
+  @apply px-6 py-0;
+}
+
+.select :global(.select__input) {
+  @apply absolute top-1/2 -translate-y-1/2 !pl-[0.625rem] text-sm;
+}
+
+.select :global(.select__multi-value) {
+  @apply ml-5 bg-transparent;
+}
+
+.select :global(.select__multi-value__remove) {
+  @apply rounded-sm p-0 hover:bg-transparent hover:text-[inherit];
+}
+
+.select .focused-multi-value {
+  @apply bg-transparent;
+}
+
+.select :global(.select__menu) {
+  @apply m-0 mt-6 overflow-hidden rounded-lg border border-solid border-slate-100 bg-white;
+}
+
+.select :global(.select__menu-list) {
+  @apply max-h-[16.875rem] p-8;
+}
+
+.select :global(.select__menu-notice) {
+  @apply flex justify-center p-0;
+}
+
+.select :global(.select__option) {
+  @apply flex cursor-pointer items-center justify-between rounded-md bg-transparent px-5 py-4 transition-colors;
+}
+
+.select :global(.select__option:active) {
+  @apply bg-slate-900 bg-opacity-30;
+}
+
+.select :global(.select__option--is-focused) {
+  @apply bg-slate-900 bg-opacity-5;
+}
+
+.select :global(.select__option--is-selected) .option-icon {
+  @apply opacity-100;
+}
+
+.select :global(.select__indicator.select__dropdown-indicator) {
+  @apply transition-transform;
+}
+
+.select :global(.select__control.select__control--menu-is-open) {
+  @apply border-yellow-300 shadow-none;
+}
+
+.select
+  :global(
+    .select__control.select__control--menu-is-open
+      .select__indicator.select__dropdown-indicator
+  ) {
+  @apply rotate-180 text-blue-500;
+}
+.option-text {
+  @apply mr-2 truncate text-dark;
+}
+
+.option-icon {
+  @apply flex-shrink-0 text-blue-300 opacity-0 transition-opacity;
+}
+
+.label {
+  @apply mb-4 inline-flex w-full text-slate-600;
+}
+
+.error-wrap .select :global(.select__control),
+.error-wrap .select :global(.select__control .select__control--is-focused) {
+  @apply border-red-700 shadow-none;
+}
+
+.disabled-wrap .label {
+  @apply text-slate-300;
+}
+
+.error {
+  @apply mt-2;
+}

@@ -35,14 +35,16 @@ declare module "next-auth" {
  */
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
-        role: session.user.role ?? "USER",
-      },
-    }),
+    session: ({ session, user }) => {
+      console.log(user);
+      return {
+        ...session,
+        user: {
+          ...user,
+          ...session.user,
+        },
+      };
+    },
   },
   secret: env.JWT_SECRET,
   adapter: PrismaAdapter(prisma),

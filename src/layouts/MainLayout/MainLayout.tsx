@@ -4,12 +4,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import s from "./MainLayout.module.css";
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({
+  children,
+  headerClasses,
+  footerClasses,
+}) => {
   return (
     <main className={s.wrap}>
-      <Header />
+      <Header className={headerClasses} />
       <div className={s.inner}>{children}</div>
-      <Footer />
+      <Footer className={footerClasses} />
     </main>
   );
 };

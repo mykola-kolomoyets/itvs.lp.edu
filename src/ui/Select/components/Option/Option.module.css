@@ -1,0 +1,7 @@
+.option-text {
+  @apply mr-6 truncate py-4 text-sm text-slate-900;
+}
+
+.option-icon {
+  @apply text-blue-500 transition-opacity;
+}

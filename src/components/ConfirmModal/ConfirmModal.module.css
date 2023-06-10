@@ -1,0 +1,36 @@
+.wrap header {
+  @apply justify-start;
+}
+
+.wrap {
+  @apply max-w-[500px];
+}
+
+.wrap [class*="title"],
+.description-wrap {
+  @apply px-8;
+}
+
+.content-wrap {
+  @apply p-4;
+}
+
+.footer {
+  @apply flex p-16 pb-8;
+}
+
+.cta {
+  @apply flex-[1_1_50%] flex-grow justify-center;
+}
+
+.cta.secondary {
+  @apply text-dark;
+}
+
+.cta.secondary:hover {
+  @apply text-white;
+}
+
+.cta:last-child {
+  @apply ml-16;
+}

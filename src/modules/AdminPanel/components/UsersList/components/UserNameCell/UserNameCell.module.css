@@ -1,0 +1,15 @@
+.wrap {
+  @apply flex items-center px-8;
+}
+
+.image-wrap {
+  @apply flex-shrink-0 overflow-hidden rounded-full;
+}
+
+.image {
+  @apply object-cover object-center;
+}
+
+.name {
+  @apply ml-12 truncate font-bold;
+}

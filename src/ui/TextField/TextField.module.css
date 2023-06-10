@@ -1,0 +1,108 @@
+.wrap {
+  @apply flex flex-col;
+}
+
+.wrap.disabled {
+  @apply pointer-events-none;
+}
+
+.wrap.disabled .label,
+.wrap.disabled .input {
+  @apply text-slate-200;
+}
+
+.wrap.disabled .input::placeholder {
+  @apply text-slate-300;
+}
+
+.input-wrap {
+  @apply flex w-full justify-between;
+}
+
+.inner {
+  @apply relative inline-flex w-full appearance-none items-center rounded-md border-[2px] border-solid border-grey-100 bg-slate-950 bg-opacity-5 transition-opacity focus-within:border-yellow-400 focus-within:outline-none hover:border-yellow-400;
+}
+
+.inner:focus-within .icon-left {
+  @apply text-blue-500;
+}
+
+.wrap.disabled .inner {
+  @apply border-opacity-0 bg-slate-950 bg-opacity-5 hover:bg-opacity-5;
+}
+
+.wrap.error .inner {
+  @apply border-red-400 shadow-none;
+}
+
+.wrap.error .input {
+  @apply text-red-400;
+}
+
+.inner.with-icon-left .input {
+  @apply pl-[3rem];
+}
+
+.inner.with-icon-right .input {
+  @apply pr-[2.25rem];
+}
+
+.inner.search {
+  @apply pr-0;
+}
+
+.label {
+  @apply mb-4 inline-flex w-full text-slate-600;
+}
+
+.inner .addon-wrap,
+.icon-wrap {
+  @apply absolute top-[calc(50%+1px)] -translate-y-1/2;
+}
+
+.icon-wrap {
+  @apply pointer-events-none text-slate-500;
+}
+
+.inner.with-icon-left .addon-wrap,
+.icon-left {
+  @apply left-1;
+}
+
+.inner.with-icon-right .addon-wrap,
+.icon-right {
+  @apply right-1;
+}
+
+.icon-left {
+  @apply left-16 top-[calc(50%-1px)];
+}
+
+.icon-right {
+  @apply right-16 top-1/2;
+}
+
+.input {
+  @apply h-full w-full appearance-none bg-transparent px-5 py-[14px] text-base leading-5 text-dark outline-none placeholder:text-slate-600;
+}
+
+.input[type="search"] {
+  @apply pr-3;
+}
+
+.input[type="search"]::-webkit-search-cancel-button {
+  @apply m-0 ml-4 h-[1.25rem] w-[1.25rem] cursor-pointer appearance-none bg-[url('/images/x-circle.svg')] bg-contain bg-no-repeat;
+}
+
+.input[type="number"]::-webkit-inner-spin-button,
+.input[type="number"]::-webkit-outer-spin-button {
+  @apply m-0 appearance-none;
+}
+
+.error-wrap {
+  @apply mt-2;
+}
+
+.cancel-btn {
+  @apply ml-2 flex-shrink-0 p-4;
+}

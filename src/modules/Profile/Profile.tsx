@@ -1,10 +1,12 @@
 import { memo, useCallback, useEffect } from "react";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import {
+  ADMIN_PATHS,
   AVATAR_BASE_SIZE,
   DEFAULT_USER_NAME,
   EMPTY_AVATAR_URL,
@@ -40,9 +42,19 @@ const Profile: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container className={s.wrap}>
-        <Typography className={s["page-title"]} variant="3xl" component="h1">
-          Особистий кабінет
-        </Typography>
+        <div className={s.top}>
+          <Typography className={s["page-title"]} variant="3xl" component="h1">
+            Особистий кабінет
+          </Typography>
+
+          {sessionData?.user.role === USER_ROLES.ADMIN ? (
+            <Link href={ADMIN_PATHS.PANEL} legacyBehavior>
+              <Button variant="primary" size="sm">
+                Панель адміністрування
+              </Button>
+            </Link>
+          ) : null}
+        </div>
 
         <section className={s["profile-wrap"]}>
           <div className={s.left}>

@@ -1,0 +1,68 @@
+.wrap {
+  @apply isolate rounded-lg border border-solid border-grey-100;
+}
+
+.thead {
+  @apply sticky top-0 z-[2];
+}
+
+.th {
+  @apply bg-grey-50 p-0 align-top;
+}
+
+.th:not(:first-child, :nth-child(2)) {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-full after:w-[1px] after:bg-slate-200;
+}
+
+.th:first-child {
+  @apply overflow-hidden rounded-tl-[0.7rem];
+}
+
+.th:last-child {
+  @apply overflow-hidden rounded-tr-[0.7rem];
+}
+
+.sorting-btn {
+  @apply flex w-full items-center justify-between bg-slate-100  py-8 pl-12 pr-4 text-slate-600 outline-none enabled:transition-colors enabled:hover:text-slate-900;
+}
+
+/* .sorting-btn:focus-visible .icon {
+  @apply focus-primary-child;
+} */
+
+/* .sorting-btn:focus .icon {
+  @apply focus-primary-child;
+} */
+
+.sorting-btn:focus:not(.sorting-btn:focus-visible) .icon {
+  @apply ring-0;
+}
+
+.icon {
+  @apply rounded-xs;
+}
+
+.thead th:first-child,
+.tbody td:first-child {
+  @apply sticky left-0 z-[1] after:absolute after:bottom-0 after:right-0 after:h-full after:w-[1px] after:bg-slate-100;
+}
+
+.tbody td {
+  @apply relative bg-white text-slate-900;
+}
+
+.tbody td:first-child {
+  @apply before:pointer-events-none before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-dark before:bg-opacity-5 before:opacity-0 before:transition-opacity;
+}
+
+.tbody td:not(:empty) {
+  @apply border-solid px-6 py-5 align-top;
+}
+
+.tbody td:not(:first-child, :nth-child(2), :empty) {
+  @apply after:absolute after:bottom-0 after:left-0 after:h-full after:w-[1px] after:bg-slate-100;
+}
+
+.tbody tr:not(:last-child) td:not(:empty) {
+  @apply border-b border-b-slate-100;
+}

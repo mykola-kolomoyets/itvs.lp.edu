@@ -1,0 +1,7 @@
+.admin {
+  @apply bg-blue-950;
+}
+
+.inner {
+  @apply flex flex-grow flex-col;
+}

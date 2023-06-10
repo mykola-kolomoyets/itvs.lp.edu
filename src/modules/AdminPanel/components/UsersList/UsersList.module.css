@@ -1,0 +1,28 @@
+.top {
+  @apply mb-3 flex items-center;
+}
+
+.title {
+  @apply font-bold;
+}
+
+.search-wrap {
+  @apply w-full max-w-[350px];
+}
+
+.table-wrap {
+  @apply mt-5;
+}
+
+.table table {
+  @apply w-full;
+}
+
+.table tbody tr td:last-child,
+.table thead th:last-child {
+  @apply p-0 align-middle after:w-0;
+}
+
+.loader-wrap {
+  @apply flex min-h-[20vh] w-full items-center justify-center;
+}

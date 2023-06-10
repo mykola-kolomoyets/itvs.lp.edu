@@ -1,0 +1,11 @@
+.wrap {
+  @apply flex items-center rounded-sm px-12 py-8 transition-colors hover:bg-slate-300 hover:bg-opacity-60;
+}
+
+.wrap.active {
+  @apply bg-blue-500 text-white hover:bg-blue-950;
+}
+
+.title {
+  @apply ml-12;
+}

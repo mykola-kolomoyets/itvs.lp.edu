@@ -1,0 +1,7 @@
+.wrap {
+  @apply px-8 pt-4;
+}
+
+.email {
+  @apply w-full truncate;
+}

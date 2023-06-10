@@ -5,7 +5,7 @@
 }
 
 .content {
-  @apply fixed left-1/2 top-1/2 max-h-[80vh] max-w-3xl -translate-x-1/2 -translate-y-1/2 transform overflow-y-auto rounded-lg bg-light p-7 pt-5 shadow-lg;
+  @apply fixed left-1/2 top-1/2 max-h-[80vh] max-w-3xl -translate-x-1/2 -translate-y-1/2 transform overflow-y-auto rounded-lg bg-light p-16 pt-5 shadow-lg;
 
   animation: contentShow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }

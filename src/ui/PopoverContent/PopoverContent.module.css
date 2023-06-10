@@ -1,0 +1,28 @@
+.wrap {
+  --header-height: 60px;
+  --content-max-height: calc(
+    var(--radix-popper-available-height) - var(--header-height)
+  );
+
+  @apply w-[400px] rounded-xl border border-solid border-slate-100 bg-light shadow-md outline-none will-change-[transform,opacity] data-[state=open]:data-[side=bottom]:animate-slide-up-and-fade data-[state=open]:data-[side=left]:animate-slide-right-and-fade data-[state=open]:data-[side=right]:animate-slide-left-and-fade data-[state=open]:data-[side=top]:animate-slide-down-and-fade;
+}
+
+.header {
+  @apply relative flex justify-center pb-5 pt-[1.75rem];
+}
+
+.title {
+  @apply px-10 text-center;
+}
+
+.btn-back {
+  @apply absolute left-[0.625rem] top-7;
+}
+
+.btn-close {
+  @apply absolute right-8 top-8 !rounded-md !p-8;
+}
+
+.btn-close .icon {
+  @apply text-slate-900;
+}

@@ -1,4 +1,5 @@
 import type { Session } from "next-auth";
+import type { ActionMeta, MultiValue, SingleValue } from "react-select";
 import type { USER_ROLES } from "./constants";
 
 export type WithClassName<T> = T & {
@@ -25,6 +26,21 @@ export type SessionContext = {
 export type ObjValues<T> = T[keyof T];
 
 export type UserRole = ObjValues<typeof USER_ROLES>;
+
+export type Option = {
+  label: string;
+  value: string;
+};
+
+export type SelectOptionType = Option & {
+  isDisabled?: boolean;
+  [key: string]: unknown;
+};
+
+export type ReactSelectChangeHandler<T = SelectOptionType> = (
+  value: SingleValue<T> | MultiValue<T>,
+  action: ActionMeta<T>
+) => void;
 
 export type ArticleItem = {
   id: string;

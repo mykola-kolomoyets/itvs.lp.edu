@@ -1,0 +1,27 @@
+.wrap {
+  @apply mx-8;
+}
+
+.trigger-icon {
+  @apply text-slate-950;
+}
+
+.trigger {
+  @apply !p-[0.5rem];
+}
+
+.trigger[data-state="open"] {
+  @apply bg-yellow-300;
+}
+
+.popover-content {
+  @apply px-20 pb-24;
+}
+
+.select {
+  @apply mb-24;
+}
+
+.cta {
+  @apply w-full justify-center;
+}

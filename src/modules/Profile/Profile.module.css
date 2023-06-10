@@ -1,3 +1,7 @@
+.top {
+  @apply flex items-center justify-between;
+}
+
 .page-title {
   @apply my-32 font-black;
 }

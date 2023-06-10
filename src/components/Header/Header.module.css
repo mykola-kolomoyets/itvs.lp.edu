@@ -1,5 +1,5 @@
 .wrap {
-  @apply bg-blue-500 px-8;
+  @apply bg-blue-500 px-8 transition-colors duration-1000;
 }
 
 .logo-wrap {

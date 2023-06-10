@@ -1,0 +1,31 @@
+.wrap {
+  @apply w-[14.25rem] rounded-lg border border-solid border-slate-100 bg-light p-8 shadow-md outline-none will-change-[transform,opacity] data-[state=open]:data-[side=bottom]:animate-slide-up-and-fade data-[state=open]:data-[side=left]:animate-slide-right-and-fade data-[state=open]:data-[side=right]:animate-slide-left-and-fade data-[state=open]:data-[side=top]:animate-slide-down-and-fade;
+}
+
+.item {
+  @apply flex cursor-pointer items-center rounded-md p-8 text-slate-900 outline-none transition-colors hover:bg-dark hover:bg-opacity-5 data-[disabled]:cursor-auto data-[disabled]:select-none data-[disabled]:bg-transparent data-[highlighted]:bg-dark data-[state=checked]:bg-dark data-[state=open]:bg-dark data-[disabled]:bg-opacity-100  data-[highlighted]:bg-opacity-5 data-[state=checked]:bg-opacity-5 data-[state=open]:bg-opacity-5 data-[disabled]:text-slate-300;
+}
+
+.item[data-disabled] svg {
+  @apply text-slate-300;
+}
+
+.icon {
+  @apply mr-4 flex-shrink-0 text-slate-600;
+}
+
+.content span {
+  @apply truncate;
+}
+
+.content {
+  @apply flex flex-grow items-center truncate;
+}
+
+.inner {
+  @apply flex-grow truncate;
+}
+
+.active-icon {
+  @apply ml-4 flex-shrink-0 text-blue-500;
+}

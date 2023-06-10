@@ -3,5 +3,5 @@
 }
 
 .inner {
-  @apply flex-grow pb-32;
+  @apply flex flex-grow flex-col;
 }
