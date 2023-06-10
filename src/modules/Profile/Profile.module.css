@@ -1,3 +1,6 @@
+.wrap {
+  @apply pb-[3rem];
+}
 .top {
   @apply flex items-center justify-between;
 }

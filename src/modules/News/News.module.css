@@ -1,4 +1,5 @@
 .wrap {
+  @apply mb-[3rem];
 }
 
 .top {
