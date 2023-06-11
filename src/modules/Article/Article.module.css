@@ -1,9 +1,9 @@
 .container {
-  @apply relative  max-w-[calc(50rem+2*1.5rem)];
+  @apply relative mb-[66px] max-w-[calc(50rem+2*1.5rem)];
 }
 
 .title {
-  @apply mb-24 w-[80%] font-black;
+  @apply mb-24 w-full font-black;
 }
 
 .article-wrap {

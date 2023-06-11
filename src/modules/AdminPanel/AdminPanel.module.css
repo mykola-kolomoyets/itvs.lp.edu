@@ -27,7 +27,7 @@
 }
 
 .content {
-  @apply p-20;
+  @apply flex w-full flex-grow-0 flex-col truncate p-20;
 }
 
 .content-loader-wrap {

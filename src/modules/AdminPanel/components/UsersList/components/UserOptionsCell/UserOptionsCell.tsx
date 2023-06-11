@@ -50,8 +50,10 @@ const UserOptionsCell: React.FC<UserOptionsCellProps> = ({ user }) => {
     name: "role",
   });
   const { mutateAsync, isLoading } = api.users.updateUserRole.useMutation({
-    onSuccess() {
-      void utils.invalidate();
+    async onSuccess() {
+      await utils.invalidate();
+
+      notificationActions.openNotification("Роль користувача успішно змінена");
     },
   });
 
@@ -61,9 +63,8 @@ const UserOptionsCell: React.FC<UserOptionsCellProps> = ({ user }) => {
         id: user.id,
         role: data.role.value as UserRole,
       });
-      notificationActions.openNotification("Роль користувача успішно змінена");
     },
-    [mutateAsync, notificationActions, user.id]
+    [mutateAsync, user.id]
   );
 
   const roleChangeSubmitHandler = handleSubmit(

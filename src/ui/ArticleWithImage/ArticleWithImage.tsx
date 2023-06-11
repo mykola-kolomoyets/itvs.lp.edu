@@ -11,7 +11,7 @@ const ArticleWithImage: React.FC<ArticleWithImageProps> = ({
   className,
   id,
   title,
-  imageUrl,
+  posterUrl,
   createdAt,
 }) => {
   return (
@@ -20,7 +20,7 @@ const ArticleWithImage: React.FC<ArticleWithImageProps> = ({
         <div className={s["image-wrap"]}>
           <Image
             className={s.image}
-            src={imageUrl}
+            src={posterUrl}
             width={592}
             height={236}
             alt={title}

@@ -1,0 +1,39 @@
+.wrap {
+  @apply flex items-center justify-between;
+}
+
+.left {
+  @apply flex items-center truncate rounded-md p-2;
+}
+
+.image-wrap {
+  @apply h-[114px] w-[123px] flex-shrink-0 overflow-hidden rounded-md;
+}
+
+.content {
+  @apply ml-12 w-full truncate;
+}
+
+.date {
+  @apply mb-10 block text-left;
+}
+
+.title {
+  @apply truncate text-left font-black;
+}
+
+.remove-btn {
+  @apply ml-12 mt-24 flex-grow-0 !p-8;
+}
+
+.remove-btn .icon {
+  @apply text-red-400;
+}
+
+.remove-btn:hover {
+  @apply !bg-red-400;
+}
+
+.remove-btn:hover .icon {
+  @apply text-light;
+}

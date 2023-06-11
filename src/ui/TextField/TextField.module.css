@@ -83,7 +83,7 @@
 }
 
 .input {
-  @apply h-full w-full appearance-none bg-transparent px-5 py-[14px] text-base leading-5 text-dark outline-none placeholder:text-slate-600;
+  @apply h-full w-full appearance-none bg-transparent px-5 py-[14px] text-base leading-5 text-dark outline-none placeholder:text-slate-400;
 }
 
 .input[type="search"] {

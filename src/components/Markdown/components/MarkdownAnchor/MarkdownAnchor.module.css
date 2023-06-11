@@ -1,0 +1,7 @@
+.wrap {
+  @apply relative text-blue-600 transition-colors;
+}
+
+.wrap:hover {
+  @apply text-yellow-500;
+}

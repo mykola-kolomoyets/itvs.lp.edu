@@ -47,6 +47,7 @@ const Header: React.FC<WithClassName<unknown>> = ({ className }) => {
 
             <div
               className={clsx(s["mobile-wrap"], isMobileMenuOpened && s.opened)}
+              tabIndex={isMobile && isMobileMenuOpened ? 0 : -1}
             >
               <Navigation
                 className={clsx(isMobile && s["mobile-nav"])}

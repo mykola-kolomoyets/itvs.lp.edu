@@ -8,7 +8,8 @@ export type TypographyComponent =
   | "h5"
   | "h6"
   | "p"
-  | "span";
+  | "span"
+  | "a";
 
 export type TypographyVariant =
   | "2xs"

@@ -1,5 +1,5 @@
-import type { ArticleWithImageItem } from "@/ui/ArticleWithImage";
+import type { Article } from "@prisma/client";
 
 export type NewsProps = {
-  news: ArticleWithImageItem[];
+  news: Article[];
 };

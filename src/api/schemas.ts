@@ -1,13 +1,17 @@
 import { z } from "zod";
 
+// === ERROR MESSAGES ===
+
+const INVALID_ADMIN_ID_ERROR =
+  "Ваше ID адміністратора обов'язкове!. Спробуйте знову або зайдіть з іншого обілкового запису.";
+
+// === USER SCHEMAS ===
+
 export const userRoleSchema = z.union([
   z.literal("ADMIN"),
   z.literal("USER"),
   z.literal("AUTHOR"),
 ]);
-
-const INVALID_ADMIN_ID_ERROR =
-  "Ваше ID адміністратора обов'язкове!. Спробуйте знову або зайдіть з іншого обілкового запису.";
 
 export const usersGetListExceptMeSchema = z.object({
   id: z
@@ -23,4 +27,24 @@ export const usersGetListExceptMeSchema = z.object({
 export const updateUserRoleSchema = z.object({
   id: z.string(),
   role: userRoleSchema,
+});
+
+// === NEWS SCHEMAS ===
+
+export const newsGetItemSchema = z.object({
+  id: z.string(),
+});
+
+export const newsGetMySchema = z.object({
+  id: z.string(),
+});
+
+export const newsCreateSchema = z.object({
+  title: z.string(),
+  content: z.string(),
+  posterUrl: z.string(),
+});
+
+export const newsDeleteSchema = z.object({
+  id: z.string(),
 });

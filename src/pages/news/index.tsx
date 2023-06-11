@@ -1,10 +1,10 @@
 import type { NextPage, GetServerSideProps } from "next";
-import News from "@/modules/News";
-import type { ArticleWithImageItem } from "@/ui/ArticleWithImage";
+import type { Article } from "@prisma/client";
 import { appRouter } from "@/server/api/root";
+import News from "@/modules/News";
 
 type NewsPageProps = {
-  news: ArticleWithImageItem[];
+  news: Article[];
 };
 
 const NewsPage: NextPage<NewsPageProps> = ({ news }) => {
@@ -22,7 +22,9 @@ export const getServerSideProps: GetServerSideProps<NewsPageProps> = async (
 
   return {
     props: {
-      news: newsFirstPage,
+      news: newsFirstPage.map((newsItem) => {
+        return JSON.parse(JSON.stringify(newsItem)) as Article;
+      }),
     },
   };
 };

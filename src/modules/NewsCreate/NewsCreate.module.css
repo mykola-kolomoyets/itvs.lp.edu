@@ -1,0 +1,49 @@
+.top {
+  @apply sticky top-[60px] z-40 mb-24 border-b border-slate-300 bg-grey-50 pb-24 pt-16;
+}
+
+.top .title {
+  @apply mb-16 font-bold;
+}
+
+.field-wrap + .field-wrap {
+  @apply mt-20;
+}
+
+.field {
+  @apply flex-grow;
+}
+
+.textarea textarea {
+  @apply h-[150px] resize-none;
+}
+
+.block-wrap {
+  @apply flex items-start;
+}
+
+.remove-btn {
+  @apply ml-12 mt-24 flex-grow-0 !p-8;
+}
+
+.icon {
+  @apply text-red-400;
+}
+
+.remove-btn:hover {
+  @apply !bg-red-400;
+}
+
+.remove-btn:hover .icon {
+  @apply text-light;
+}
+
+.empty-state-emoji {
+  @apply mb-16 text-[3.5rem];
+}
+
+@media screen and (max-width: 768px) {
+  .top {
+    @apply top-0;
+  }
+}

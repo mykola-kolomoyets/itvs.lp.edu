@@ -32,7 +32,11 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
       </div>
       <footer className={s.footer}>
         <DialogClose asChild>
-          <Button className={clsx(s.cta, s.secondary)} variant="ghost" size="sm">
+          <Button
+            className={clsx(s.cta, s.secondary)}
+            variant="ghost"
+            size="sm"
+          >
             {secondaryButtonLabel}
           </Button>
         </DialogClose>

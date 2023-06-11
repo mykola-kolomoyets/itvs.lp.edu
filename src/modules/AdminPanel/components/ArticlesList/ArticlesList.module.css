@@ -1,0 +1,22 @@
+.wrap {
+  @apply flex flex-grow flex-col p-4;
+}
+.top {
+  @apply mb-3 flex items-center justify-between;
+}
+
+.title {
+  @apply font-bold;
+}
+
+.create-cta .icon {
+  @apply mr-8;
+}
+
+.content {
+  @apply flex w-full flex-col truncate p-4;
+}
+
+.content .article + .article {
+  @apply mt-16;
+}

@@ -1,5 +1,5 @@
-import type { ArticleItem } from "@/types";
+import type { Article } from "@prisma/client";
 
 export type ArticleProps = {
-  article: ArticleItem;
+  article: Article;
 };

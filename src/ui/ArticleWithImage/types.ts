@@ -1,3 +1,4 @@
+import type { Article } from "@prisma/client";
 import type { WithClassName } from "@/types";
 
 export type ArticleWithImageItem = {
@@ -7,4 +8,4 @@ export type ArticleWithImageItem = {
   createdAt: Date | string;
 };
 
-export type ArticleWithImageProps = WithClassName<ArticleWithImageItem>;
+export type ArticleWithImageProps = WithClassName<Article>;

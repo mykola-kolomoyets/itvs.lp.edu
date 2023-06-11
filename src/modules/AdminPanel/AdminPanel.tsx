@@ -31,6 +31,21 @@ const UsersList = dynamic(
   }
 );
 
+const ArticlesList = dynamic(
+  () => {
+    return import("./components/ArticlesList");
+  },
+  {
+    loading() {
+      return (
+        <div className={s["content-loader-wrap"]}>
+          <Loader size={100} />
+        </div>
+      );
+    },
+  }
+);
+
 const AdminPanel: React.FC<{ session: Session }> = () => {
   const [activeTab, setActiveTab] = useState(ADMIN_PANEL_SIDEBAR_LIST[0].id);
 
@@ -72,7 +87,7 @@ const AdminPanel: React.FC<{ session: Session }> = () => {
             className={s["tabs-content"]}
             value={ADMIN_PANEL_SIDEBAR_ITEMS.ARTICLES}
           >
-            Articles
+            <ArticlesList />
           </TabsContent>
         </section>
       </TabsRoot>

@@ -52,5 +52,5 @@
 }
 
 .title {
-  @apply font-black;
+  @apply line-clamp-3 font-black;
 }

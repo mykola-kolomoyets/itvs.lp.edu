@@ -1,18 +1,18 @@
 import { memo } from "react";
 import Head from "next/head";
-import {
-  MOCK_LATEST_NEWS,
-  MOCK_PARTNERS_NEWS,
-  MOCK_URGENT_ARTICLES,
-} from "./constants";
-import MainLayout from "@/layouts/MainLayout";
 import BlockWithTitle from "@/layouts/BlockWithTitle";
 import Container from "@/ui/Container";
 import ArticleWithoutImage from "@/ui/ArticleWithoutImage";
 import ArticleWithImage from "@/ui/ArticleWithImage";
 import s from "./Home.module.css";
+import type { HomePageProps } from "./types";
 
-const Home: React.FC = () => {
+const Home: React.FC<HomePageProps> = ({
+  latestNews,
+  performanceNews,
+  polytechnicNews,
+  topNews,
+}) => {
   return (
     <>
       <Head>
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
           ctaLabel="Всі новини"
           ctaHref="/news"
         >
-          {MOCK_URGENT_ARTICLES.map((article) => {
+          {topNews?.map((article) => {
             return (
               <ArticleWithoutImage
                 className={s["urgent-article"]}
@@ -46,12 +46,12 @@ const Home: React.FC = () => {
           ctaHref="/news"
         >
           <div className={s["first-row"]}>
-            {MOCK_LATEST_NEWS.slice(0, 2).map((article) => {
+            {latestNews?.slice(0, 2).map((article) => {
               return <ArticleWithImage key={article.id} {...article} />;
             })}
           </div>
           <div className={s["others"]}>
-            {MOCK_LATEST_NEWS.slice(2).map((article) => {
+            {latestNews?.slice(2).map((article) => {
               return <ArticleWithImage key={article.id} {...article} />;
             })}
           </div>
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
             ctaClasses={s["light-text"]}
           >
             <div className={s["lpnu-wrap"]}>
-              {MOCK_LATEST_NEWS.slice(2).map((article) => {
+              {polytechnicNews?.map((article) => {
                 return <ArticleWithImage key={article.id} {...article} />;
               })}
             </div>
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
           ctaHref="/news"
         >
           <div className={s["partners-wrap"]}>
-            {MOCK_PARTNERS_NEWS.map((article) => {
+            {performanceNews?.map((article) => {
               return <ArticleWithImage key={article.id} {...article} />;
             })}
           </div>
